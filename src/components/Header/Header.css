@@ -1,0 +1,36 @@
+.header {
+  margin: 0;
+  position: relative;
+  padding-top: 43px;
+  padding-bottom: 43px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__logo {
+  margin: 0;
+  width: 252px;
+  height: 103px;
+}
+.header__btn-logout {
+  margin: 0;
+  position: absolute;
+  right: 67px;
+  width: 100px;
+  height: 56px;
+  border: none;
+  background-color: #000;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 30px;
+  transition: opacity 200ms ease-in-out;
+
+  color: #ffffff;
+}
+.header__btn-logout:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
