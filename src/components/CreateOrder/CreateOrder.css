@@ -1,4 +1,4 @@
-.main {
+.create-order {
   margin: 0 auto;
   padding-bottom: 100px;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 }
-.main__title {
+.create-order__title {
   margin: 0 auto;
   margin-top: 123px;
   margin-bottom: 136px;
@@ -19,7 +19,7 @@
 
   color: #000000;
 }
-.main__form {
+.create-order__form {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -27,17 +27,22 @@
   justify-content: center;
   gap: 113px;
 }
-.main__container-form {
+.create-order__container-form {
   margin: 0;
   display: flex;
   gap: 94px;
 }
-.main__input {
+.create-order__container-input{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.create-order__input {
   margin: 0;
   width: 310px;
-  height: 77px;
+  height: 75px;
   outline: none;
-  border: none;
+  border: 2px solid #000;
   background-color: #000000;
   font-family: "Inter";
   font-style: normal;
@@ -48,10 +53,21 @@
 
   color: rgb(255, 255, 255);
 }
-.main__input::placeholder {
+.create-order__input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
-.main__submit-btn {
+.create-order__error-text{
+  margin: 0;
+  margin-top: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  text-align: center;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ff3636;
+}
+.create-order__submit-btn {
   margin: 0;
   width: 218px;
   height: 56px;
@@ -66,11 +82,11 @@
 
   color: #ffffff;
 }
-.main__submit-btn:hover {
+.create-order__submit-btn:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-.main__order-btn {
+.create-order__order-btn {
   margin: 0 auto;
   position: fixed;
   right: 0;
@@ -91,7 +107,20 @@
 
   color: #ffffff;
 }
-.main__order-btn:hover{
+.create-order__order-btn:hover{
     cursor: pointer;
     opacity: .8;
+}
+.create-order__order-btn__disabled {
+  opacity: .8;
+}
+.create-order__order-btn__disabled:hover {
+  cursor:no-drop;
+}
+.create-order__order-btn__disabled {
+  opacity: .8;
+  cursor:no-drop;
+}
+.create-order__input-error{
+  border: 2px solid #ff3636
 }

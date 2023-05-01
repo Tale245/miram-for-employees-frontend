@@ -1,0 +1,33 @@
+.order {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #000000;
+}
+.order__button-done {
+  margin: 0;
+  width: 132px;
+  height: 43px;
+  background-color: #000000;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 30px;
+
+  color: rgba(255, 255, 255, 0.7);
+  transition: opacity 200ms ease-in-out;
+}
+.order__button-done:hover{
+  opacity: .8;
+  cursor: pointer;
+}
