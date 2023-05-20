@@ -1,6 +1,6 @@
 .welcomePage {
   margin: 0 auto;
-  padding-top: 127px;
+  padding-top: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,7 @@
   margin: 0;
   border: none;
   background-color: #000;
-  width: 143px;
+  min-width: 143px;
   height: 56px;
   font-family: "Inter";
   font-style: normal;

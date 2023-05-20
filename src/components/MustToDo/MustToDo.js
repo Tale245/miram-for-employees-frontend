@@ -21,7 +21,7 @@ const MustToDo = ({ orderList }) => {
           </h2>
         </div>
         <div className="mustToDo__element-container">
-          {orderList.map((item) => (
+          {orderList?.map((item) => (
             <Order
               key={item.quantity}
               title={item.articul}

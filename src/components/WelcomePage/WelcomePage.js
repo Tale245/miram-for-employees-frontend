@@ -4,13 +4,20 @@ import "./WelcomePage.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
-const WelcomePage = () => {
+const WelcomePage = ({ isLoggedIn, createOrder }) => {
   return (
     <section className="welcomePage">
-      <img src={logo} className="project-logo" />
-      <NavLink to="/signin">
-        <button className="welcomePage__button">Вход</button>
-      </NavLink>
+      {!isLoggedIn && <img src={logo} alt="Логотип" className="project-logo" />}
+      {!isLoggedIn && (
+        <NavLink to="/signin">
+          <button className="welcomePage__button">Вход</button>
+        </NavLink>
+      )}
+      {isLoggedIn && (
+        <NavLink to="/create-order">
+          <button className="welcomePage__button" onClick={createOrder}>Создать заказ</button>
+        </NavLink>
+      )}
     </section>
   );
 };

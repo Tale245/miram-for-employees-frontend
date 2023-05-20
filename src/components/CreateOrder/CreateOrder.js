@@ -1,11 +1,10 @@
 import React from "react";
 
 import "./CreateOrder.css";
-import Header from "../Header/Header";
 import { Link } from "react-router-dom";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-const CreateOrder = ({ setOrderList }) => {
+const CreateOrder = ({addItemsInNewOrder}) => {
   const {
     register,
     handleSubmit,
@@ -13,17 +12,10 @@ const CreateOrder = ({ setOrderList }) => {
     reset,
   } = useForm({ mode: "onChange" });
 
-  let tempArray = []
 
   const onSubmit = (data) => {
-    let order = {
-      articul: data.articul,
-      format: data.format,
-      quantity: data.quantity 
-    }
-
-    tempArray.push(order)
-    setOrderList(tempArray)
+    addItemsInNewOrder(data.articleNumber, data.format, data.quantity)
+    reset()
   };
   return (
     <>
@@ -33,7 +25,7 @@ const CreateOrder = ({ setOrderList }) => {
           <div className="create-order__container-form">
             <div className="create-order__container-input">
               <input
-                {...register("articul", {
+                {...register("articleNumber", {
                   required: "Это поле обязательно!",
                   minLength: {
                     value: 2,
@@ -41,13 +33,13 @@ const CreateOrder = ({ setOrderList }) => {
                   },
                 })}
                 className={`create-order__input ${
-                  errors.articul && "create-order__input-error"
+                  errors.articleNumber && "create-order__input-error"
                 }`}
                 placeholder="Артикул"
               />
-              {errors?.articul && (
+              {errors?.articleNumber && (
                 <span className="create-order__error-text">
-                  {errors.articul.message}
+                  {errors.articleNumber.message}
                 </span>
               )}
             </div>
