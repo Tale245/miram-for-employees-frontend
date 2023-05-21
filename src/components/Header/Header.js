@@ -1,15 +1,21 @@
 import React from "react";
 
-import './Header.css'
-import logo from '../../images/logo.svg'
+import { NavLink } from "react-router-dom";
 
-const Header = ({logout}) => {
-    return(
-        <header className="header">
-            <img className="header__logo" src={logo}  alt="Логотип"/>
-            <button className="header__btn-logout" onClick={logout}>Выход</button>
-        </header>
-    )
-}
+import "./Header.css";
+import logo from "../../images/logo.svg";
 
-export default Header
+const Header = ({ logout, isLoggedIn, moveLeft }) => {
+  return (
+    <header className={`header ${(isLoggedIn || moveLeft) && "header_isLoggedIn"}`}>
+      <NavLink to={`${isLoggedIn ? '/profile' : '/welcome-page' }`}><img className="header__logo" src={logo} alt="Логотип" /></NavLink> 
+      {isLoggedIn && (
+        <button className="header__btn-logout" onClick={logout}>
+          Выход
+        </button>
+      )}
+    </header>
+  );
+};
+
+export default Header;

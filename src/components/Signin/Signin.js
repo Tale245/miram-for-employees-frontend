@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./Signin.css";
 import { useForm } from "react-hook-form";
 
-const Signin = ({signin}) => {
+const Signin = ({signin, setMoveLeft}) => {
   const {
     register,
     handleSubmit,
     formState: { isValid, errors },
   } = useForm({ mode: "onTouched" });
+
+  useEffect(() => {
+    setMoveLeft(true)
+  }, [])
 
   const onSubmit = (data) => {
     signin(data.login, data.password)
@@ -57,7 +61,7 @@ const Signin = ({signin}) => {
             </span>
           )}
         </div>
-        <button className="signin__submit-btn">Войти</button>
+        <button className={`signin__submit-btn ${!isValid && 'signin__submit-btn_disabled' }`}>Войти</button>
       </form>
     </section>
   );

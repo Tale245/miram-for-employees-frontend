@@ -8,28 +8,13 @@ const MustToDo = ({ orderList }) => {
     <section className="mustToDo">
       <button className="mustToDo__button-overWork">Закончить работу</button>
       <div className="mustToDo__container">
-        <p className="mustToDo__date">До 25.02</p>
-        <div className="order-list__title-container">
-          <h2 className="order-list__order-title order-list__order-title_name">
-            Артикул
-          </h2>
-          <h2 className="order-list__order-title order-list__order-size">
-            Размер
-          </h2>
-          <h2 className="order-list__order-title order-list__order-quantity">
-            Кол-во
-          </h2>
-        </div>
+        <p className="mustToDo__date">
+          Сделать до: <span className="mustToDo__span-date">17.04</span>
+        </p>
         <div className="mustToDo__element-container">
-          {orderList?.map((item) => (
-            <Order
-              key={item.quantity}
-              title={item.articul}
-              size={item.format}
-              quantity={item.quantity}
-              isMustToDoPage={false}
-            />
-          ))}
+          <Order title={"1. "} isMustToDoPage={true} />
+          <Order title={"2. "} isMustToDoPage={true} />
+          <Order title={"3. "} isMustToDoPage={true} />
         </div>
       </div>
     </section>

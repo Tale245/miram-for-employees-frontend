@@ -9,10 +9,12 @@ import Header from "./Header/Header";
 import userApi from "../utils/UserApi";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import orderApi from "../utils/OrderApi";
+import Profile from "./Profile/Profile";
 
 function App() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [moveLeft, setMoveLeft] = useState(false);
   const [userInfo, setUserInfo] = useState(
     JSON.parse(localStorage.getItem("userInfo"))
   );
@@ -28,13 +30,7 @@ function App() {
   // Проверяем тип пользователя, после чего решаем,какую страницу отобразить
   useEffect(() => {
     if (isLoggedIn) {
-      if (userInfo.type === "worker") {
-        navigate("/must-to-do");
-      } else if (userInfo.type === "developer") {
-        navigate("/welcome-page");
-      } else if (userInfo.type === "admin") {
-        navigate("/welcome-page");
-      }
+      navigate("/profile");
     }
   }, [isLoggedIn]);
 
@@ -59,13 +55,7 @@ function App() {
           setUserInfo(JSON.parse(localStorage.getItem("userInfo")));
           setIsLoggedIn(true);
           // Проверяем тип пользователя, после чего решаем,какую страницу отобразить
-          if (userInfo.type === "worker") {
-            navigate("/must-to-do");
-          } else if (userInfo.type === "developer") {
-            navigate("/welcome-page");
-          } else if (userInfo.type === "admin") {
-            navigate("/welcome-page");
-          }
+          navigate("/profile");
         });
       })
       .catch((e) => console.log(e));
@@ -78,7 +68,7 @@ function App() {
 
   return (
     <div className="page">
-      {isLoggedIn && <Header logout={logout} />}
+      <Header logout={logout} isLoggedIn={isLoggedIn} moveLeft={moveLeft}/>
       <Routes>
         {userInfo?.type !== "worker" && (
           <Route
@@ -109,16 +99,23 @@ function App() {
             <ProtectedRoute element={MustToDo} isLoggedIn={isLoggedIn} />
           }
         />
+        <Route
+          exact
+          path="/profile"
+          element={
+            <ProtectedRoute element={Profile} isLoggedIn={isLoggedIn} userInfo={userInfo}/>
+          }
+        />
 
         <Route
           exact
           path="/welcome-page"
           element={
-            <WelcomePage isLoggedIn={isLoggedIn} createOrder={createOrder} />
+            <WelcomePage isLoggedIn={isLoggedIn} setMoveLeft={setMoveLeft} />
           }
         />
 
-        <Route exact path="/signin" element={<Signin signin={signin} />} />
+        <Route exact path="/signin" element={<Signin signin={signin} setMoveLeft={setMoveLeft}/>} />
       </Routes>
     </div>
   );

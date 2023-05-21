@@ -21,15 +21,7 @@ const OrderList = ({ orderList }) => {
           </h2>
         </div>
         <div className="order-list__container">
-          {orderList.map((item) => (
-            <Order
-              key={item.quantity}
-              title={item.articul}
-              size={item.format}
-              quantity={item.quantity}
-              isMustToDoPage={false}
-            />
-          ))}
+          <Order isMustToDoPage={false}/>
         </div>
         <Link to="/must-to-do">
           {" "}

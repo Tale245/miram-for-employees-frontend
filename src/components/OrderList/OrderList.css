@@ -14,10 +14,11 @@
 }
 .order-list__title-container {
   margin: 0 auto;
+  margin-left: 440px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 160px;
+  gap: 360px;
 }
 .order-list__order-title {
   margin: 0;
@@ -34,25 +35,26 @@
   min-width: 231px;
   height: 56px;
   border: none;
-  background-color: #000;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
   font-family: "Inter";
   font-style: normal;
   font-weight: 200;
-  font-size: 25px;
-  line-height: 30px;
-  transition: opacity 200ms ease-in-out;
+  font-size: 20px;
+  line-height: 24px;
+  transition: box-shadow 200ms ease-in-out;
 
-  color: #ffffff;
+  color: #000;
 }
 .order-list__btn:hover {
   cursor: pointer;
-  opacity: 0.8;
+  box-shadow: 0px 0px 40px #e0e0e0;
 }
-.order-list__submit-btn{
-    margin-top: 50px;
+.order-list__submit-btn {
+  margin-top: 70px;
 }
-.order-list__create-order{
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
+.order-list__create-order {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
 }

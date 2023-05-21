@@ -1,23 +1,41 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import "./WelcomePage.css";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/logo.svg";
 
-const WelcomePage = ({ isLoggedIn, createOrder }) => {
+import rightIco from "../../images/right-ico.svg";
+
+const WelcomePage = ({ isLoggedIn, setMoveLeft }) => {
+
+  useEffect(() => {
+    setMoveLeft(false)
+  }, [])
+
+
   return (
     <section className="welcomePage">
-      {!isLoggedIn && <img src={logo} alt="Логотип" className="project-logo" />}
-      {!isLoggedIn && (
-        <NavLink to="/signin">
-          <button className="welcomePage__button">Вход</button>
-        </NavLink>
-      )}
-      {isLoggedIn && (
-        <NavLink to="/create-order">
-          <button className="welcomePage__button" onClick={createOrder}>Создать заказ</button>
-        </NavLink>
-      )}
+      <div className="welcomePage__container">
+        <div className="welcomePage__title-container">
+          <h1 className="welcomePage__title">
+            Здравствуйте! Чтобы создать заказ или начать работу, вам необходимо
+            войти в систему!
+          </h1>
+          <img
+            src={rightIco}
+            className="welcomePage__ico-right"
+            alt="иконка направления - направо"
+          />
+        </div>
+        <div className="welcomePage__btn-container">
+          {!isLoggedIn && (
+            <NavLink to="/signin">
+              <button className="welcomePage__button">Вход</button>
+            </NavLink>
+          )}
+        </div>
+      </div>
+
+
     </section>
   );
 };

@@ -4,7 +4,7 @@ import "./CreateOrder.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-const CreateOrder = ({addItemsInNewOrder}) => {
+const CreateOrder = ({ addItemsInNewOrder }) => {
   const {
     register,
     handleSubmit,
@@ -12,10 +12,9 @@ const CreateOrder = ({addItemsInNewOrder}) => {
     reset,
   } = useForm({ mode: "onChange" });
 
-
   const onSubmit = (data) => {
-    addItemsInNewOrder(data.articleNumber, data.format, data.quantity)
-    reset()
+    addItemsInNewOrder(data.articleNumber, data.format, data.quantity);
+    reset();
   };
   return (
     <>
@@ -92,12 +91,14 @@ const CreateOrder = ({addItemsInNewOrder}) => {
             Добавить
           </button>
         </form>
+      </section>
+      <div className="create-order__orderBtn-container">
         <Link to="/order-list">
           <button className={`create-order__order-btn`}>
             Посмотреть весь заказ
           </button>
         </Link>
-      </section>
+      </div>
     </>
   );
 };

@@ -8,12 +8,14 @@
 }
 .signin__title {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 30px;
+
+  color: #000000;
   /* identical to box height */
 
   color: #000000;
@@ -27,43 +29,26 @@
 .signin__input {
   margin: 0;
   padding-left: 17px;
-  width: 237px;
-  height: 33px;
+  width: 229px;
+  height: 41px;
   outline: none;
-  border: 1px solid #ffffff;
-  background-color: #000;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  background-color: none;
   font-family: "Inter";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
+  transition: border-bottom 200ms ease-in-out;
 
-  color: #ffffff;
+  color: #000;
 }
-.signin__input_error{
-  border: 1px solid #ff3c3c;
+.signin__input_error {
+  border-bottom: 1px solid #ff3c3c;
 }
 .signin__input::placeholder {
   color: #bababa;
-}
-.signin__submit-btn {
-  margin: 0 auto;
-  width: 93px;
-  height: 35px;
-  border: none;
-  background-color: #000;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  transition: opacity 200ms ease-in-out;
-
-  color: #ffffff;
-}
-.signin__submit-btn:hover {
-  cursor: pointer;
-  opacity: 0.8;
 }
 .signin__input-container {
   margin: 0;
@@ -82,4 +67,28 @@
   font-size: 15px;
   line-height: 17px;
   color: #ff3c3c;
+}
+.signin__submit-btn {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 93px;
+  height: 35px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  transition: opacity 200ms ease-in-out;
+  cursor: pointer;
+
+  color: #000;
+}
+.signin__submit-btn:hover {
+  opacity: 0.8;
+}
+.signin__submit-btn_disabled {
+  opacity: 0.8;
+  cursor: auto;
 }

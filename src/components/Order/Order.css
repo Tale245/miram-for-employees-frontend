@@ -1,9 +1,10 @@
 .order {
   margin: 0;
+  padding-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 150px;
+  gap: 330px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -16,18 +17,18 @@
   margin: 0;
   width: 132px;
   height: 43px;
-  background-color: #000000;
-  border: none;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
   font-family: "Inter";
   font-style: normal;
   font-weight: 200;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.7);
 
-  color: rgba(255, 255, 255, 0.7);
-  transition: opacity 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
 }
-.order__button-done:hover{
-  opacity: .8;
+.order__button-done:hover {
+  box-shadow: 0px 0px 40px #e0e0e0;
   cursor: pointer;
 }
